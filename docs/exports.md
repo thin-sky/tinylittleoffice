@@ -62,6 +62,7 @@ there it is drawn still, at its resting moment (`ViewOpts.still`).
 | Trip Planner | `.gpx` | GPX route |
 | Trip Planner | `.geojson` | GeoJSON |
 | Team Paste | `.txt` | Showdown export text |
+| Pocket Calendar | `.ics` | iCalendar (ICS) |
 
 A seating chart (Diagram Maker, `kind: seating`) prints its place cards from its bar: a card a guest, eight to a
 letter sheet, with lines to cut along.
@@ -86,3 +87,4 @@ Under Download, "Open in": the document as another app reads it, converted by a 
 | Diagram Maker | Outliner | Show as outline |
 | Diagram Maker | Drawing Tool | Open in Drawing Tool |
 | Trip Planner | Calendar | Put the stops on a calendar, a day each |
+| Pocket Calendar | Calendar | Open in the full Calendar |

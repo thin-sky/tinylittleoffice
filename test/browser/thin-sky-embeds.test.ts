@@ -7,7 +7,7 @@ import { parse } from '../../src/doc/index.ts';
 
 for (const host of ['write', 'outline', 'deck'])
   test(host + ' embeds each Thin Sky app through its real insert command', { timeout: 30000 }, async () => {
-    for (const target of ['worksheet', 'study', 'team']) {
+    for (const target of ['worksheet', 'study', 'team', 'tier', 'dates']) {
       const template = (await appOf(host)!.templates())[0];
       const shell = await mount('#/v1/' + host + '/' + encodeDoc(template.doc));
       await until(() => !!shell.editor && inScope(host).some((c) => c.id === host + '.insert.app.' + target), 5000);

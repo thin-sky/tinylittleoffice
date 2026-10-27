@@ -18,10 +18,12 @@ import calc from '../../apps/calc/def.ts';
 import worksheet from '../../apps/worksheet/def.ts';
 import study from '../../apps/study/def.ts';
 import team from '../../apps/team/def.ts';
+import tier from '../../apps/tier/def.ts';
+import dates from '../../apps/dates/def.ts';
 import { QR_LANG, qrPicture } from '../draw/qr-picture.ts';
 import { LOCKED_LANG, lockedDoc } from '../share/locked.ts';
 
-const ALL: AppDef[] = [write, outline, deck, sheet, calc, draw, diagram, anim, cal, trip, worksheet, study, team];
+const ALL: AppDef[] = [write, outline, deck, sheet, calc, draw, diagram, anim, cal, trip, worksheet, study, team, tier, dates];
 
 export const apps = (): AppDef[] => ALL;
 export const appOf = (id: string): AppDef | undefined => ALL.find((a) => a.id === id);

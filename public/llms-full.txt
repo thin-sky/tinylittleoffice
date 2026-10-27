@@ -73,6 +73,8 @@ Write ordinary Markdown: `#` headings, paragraphs, `- ` and `1. ` lists nested b
 | `worksheet` | Interactive Worksheets | Live fields, calculated results, and checklists in a shareable document. |
 | `study` | Study Packs | Flashcards, cloze questions, and a practice session inside a link. |
 | `team` | Team Paste | A Pokémon Showdown export as a self-contained team card. |
+| `tier` | Tier List Maker | Rank text and emoji cards in editable tiers, all inside a link. |
+| `dates` | Pocket Calendar | Pick dates and ranges in colored groups, then share the calendar as a link. |
 
 ## Choosing an app
 
@@ -612,6 +614,52 @@ Careful Nature
 As a link: <https://office.thin-sky.cloud/team/#doc=---%0Atitle%3A+A+little+rain+team%0A---%0A%60%60%60showdown%0APelipper+%40+Damp+Rock%0AAbility%3A+Drizzle%0AEVs%3A+248+HP+%2F+252+Def+%2F+8+SpD%0ABold+Nature%0A-+Hurricane%0A-+Surf%0A-+U-turn%0A-+Roost%0A%0ABarraskewda+%40+Choice+Band%0AAbility%3A+Swift+Swim%0AEVs%3A+252+Atk+%2F+4+SpD+%2F+252+Spe%0AAdamant+Nature%0A-+Liquidation%0A-+Close+Combat%0A-+Psychic+Fangs%0A-+Flip+Turn%0A%0AFerrothorn+%40+Leftovers%0AAbility%3A+Iron+Barbs%0AEVs%3A+252+HP+%2F+4+Def+%2F+252+SpD%0ACareful+Nature%0A-+Power+Whip%0A-+Knock+Off%0A-+Leech+Seed%0A-+Stealth+Rock%0A%60%60%60>
 
 Templates: A little rain team.
+
+### tier: Tier List Maker
+
+The first table has Tier and Item columns. Rows are grouped by the first appearance of each tier; a row with an empty item keeps that tier visible. Cards are text or emoji. Edit controls move or reorder them; desktop dragging moves a card to a tier.
+
+Snack rankings:
+
+```
+---
+title: Snack rankings
+---
+Tier | Item
+--- | ---
+S | 🍿 Popcorn
+A | 🍎 Apple slices
+B | 🥨 Pretzels
+C |
+D |
+Unranked | 🍫 Chocolate
+Unranked | 🧀 Cheese
+Unranked | 🍓 Strawberries
+```
+
+As a link: <https://office.thin-sky.cloud/tier/#doc=---%0Atitle%3A+Snack+rankings%0A---%0ATier+%7C+Item%0A---+%7C+---%0AS+%7C+%F0%9F%8D%BF+Popcorn%0AA+%7C+%F0%9F%8D%8E+Apple+slices%0AB+%7C+%F0%9F%A5%A8+Pretzels%0AC+%7C%0AD+%7C%0AUnranked+%7C+%F0%9F%8D%AB+Chocolate%0AUnranked+%7C+%F0%9F%A7%80+Cheese%0AUnranked+%7C+%F0%9F%8D%93+Strawberries>
+
+### dates: Pocket Calendar
+
+Inspired by PocketCal: a snapshot of named date groups in a link. The first table has Group, Start, End, Color columns. Dates are inclusive YYYY-MM-DD civil dates, unaffected by time zones. Colors: indigo, red, orange, green, blue, purple. A group with empty dates keeps its name. The head's month (YYYY-MM), week-start (monday or sunday), and weekends (true or false) control the twelve-month view. Toggle a day, add a range, or remove a selected day to split a range. Export .ics or open the dates in the existing full Calendar.
+
+A year of small adventures:
+
+```
+---
+title: A year of small adventures
+month: 2027-01
+week-start: monday
+---
+Group | Start | End | Color
+--- | --- | --- | ---
+Time off | 2027-01-15 | 2027-01-18 | green
+Time off | 2027-04-05 | 2027-04-09 | green
+Study together | 2027-01-16 | 2027-01-16 | indigo
+Study together | 2027-02-06 | 2027-02-06 | indigo
+```
+
+As a link: <https://office.thin-sky.cloud/dates/#doc=---%0Atitle%3A+A+year+of+small+adventures%0Amonth%3A+2027-01%0Aweek-start%3A+monday%0A---%0AGroup+%7C+Start+%7C+End+%7C+Color%0A---+%7C+---+%7C+---+%7C+---%0ATime+off+%7C+2027-01-15+%7C+2027-01-18+%7C+green%0ATime+off+%7C+2027-04-05+%7C+2027-04-09+%7C+green%0AStudy+together+%7C+2027-01-16+%7C+2027-01-16+%7C+indigo%0AStudy+together+%7C+2027-02-06+%7C+2027-02-06+%7C+indigo>
 
 ## Every app's files
 

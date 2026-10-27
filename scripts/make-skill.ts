@@ -247,6 +247,8 @@ export async function makeShort(skill: string, examples?: Map<string, Example[]>
     '',
     `With a runtime: \`${API_LINE}\` in a browser, Deno or Bun; \`npx tinylittleoffice\` in Node, where \`skill --into ~/.claude/skills\` installs this guide for Claude Code. To learn a shape by example:`,
     '',
+    'New apps need this API or `npm run tinyoffice --` in this fork.',
+    '',
     '- `npx tinylittleoffice shapes <app>`: what the app reads, a line a shape',
     '- `npx tinylittleoffice example <app> [shape]`: the smallest document that shows it, its JSON, lint and measures',
     '- `npx tinylittleoffice try <app> <file|->`: a draft’s lint, measures and JSON',
@@ -262,7 +264,7 @@ export async function makeShort(skill: string, examples?: Map<string, Example[]>
       const e = all.find((x) => x.link.length <= 400) ?? [...all].sort((x, y) => x.link.length - y.link.length)[0];
       // Packed examples keep the guide small as the registry grows.
       const url = SITE + a.id + '/#/v1/' + a.id + '/' + withBreaks(encodeDoc(e.text));
-      return `- \`${a.id}\` ${a.name}, ${e.name}: <${url}>`;
+      return `- \`${a.id}\`: <${url}>`;
     }),
     '',
     nested,

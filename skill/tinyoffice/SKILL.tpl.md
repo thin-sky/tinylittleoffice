@@ -225,6 +225,18 @@ The editor displays cards and edits the export text; it does not validate battle
 
 {{templates:team}}
 
+### tier: Tier List Maker
+
+The first table has Tier and Item columns. Rows are grouped by the first appearance of each tier; a row with an empty item keeps that tier visible. Cards are text or emoji. Edit controls move or reorder them; desktop dragging moves a card to a tier.
+
+{{tpl:tier:snacks}}
+
+### dates: Pocket Calendar
+
+Inspired by PocketCal: a snapshot of named date groups in a link. The first table has Group, Start, End, Color columns. Dates are inclusive YYYY-MM-DD civil dates, unaffected by time zones. Colors: indigo, red, orange, green, blue, purple. A group with empty dates keeps its name. The head's month (YYYY-MM), week-start (monday or sunday), and weekends (true or false) control the twelve-month view. Toggle a day, add a range, or remove a selected day to split a range. Export .ics or open the dates in the existing full Calendar.
+
+{{tpl:dates:plans}}
+
 ## Every app's files
 
 Every document downloads as a `.pdf` (its pages as pictures; Print in the browser saves one with the words still words), a picture (`.png`), a web page (`.html`), Markdown (`.md`, footnotes in Markdown's reference form) and its own text (`.tlo`: the TLO with `app: <id>` in its head, which opens as its own app when dropped on the site). A `.zip` of `.tlo` and `.md` files, a folder per app, opens the same way when dropped: every document in it is kept on the device (with Save in browser off, listed to keep or to open). A link that downloads a file as it opens is `#/v1/<app>.<ext>/<payload>`, or `view=<ext>` in the plain form.

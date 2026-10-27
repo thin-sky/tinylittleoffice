@@ -61,6 +61,22 @@ const PICTURES = ['draw', 'diagram', 'trip', 'cal'];
 
 /** Every app's shapes, the one it is most often asked for first. */
 export const SHAPES: Record<string, Shape[]> = {
+  tier: [
+    {
+      id: 'ranks',
+      name: 'ordered tier rows',
+      for: 'a Tier and Item table; empty items preserve empty tiers',
+      has: (d) => tables(d).some((t) => t.cols[0]?.name === 'Tier' && t.rows.some((r) => r[1])),
+    },
+  ],
+  dates: [
+    {
+      id: 'ranges',
+      name: 'named date ranges',
+      for: 'a Group, Start, End and Color table of inclusive civil dates',
+      has: (d) => tables(d).some((t) => t.cols[0]?.name === 'Group' && t.rows.some((r) => r[1] && r[2])),
+    },
+  ],
   worksheet: [{ id: 'fields', name: 'live named fields', for: 'editable values and calculated outputs in a named table', has: (d) => column(d, 'name') && formula(d) }],
   study: [
     {

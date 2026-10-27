@@ -1,0 +1,42 @@
+{
+  "app": "tier",
+  "name": "Tier List Maker",
+  "shapes": [
+    {
+      "id": "ranks",
+      "name": "ordered tier rows",
+      "for": "a Tier and Item table; empty items preserve empty tiers",
+      "from": "template snacks",
+      "text": "Tier | Item\n--- | ---\nUnranked | 🧀 Cheese\nUnranked | 🍓 Strawberries\n",
+      "link": "https://office.thin-sky.cloud/tier/#doc=Tier+%7C+Item%0A---+%7C+---%0AUnranked+%7C+%F0%9F%A7%80+Cheese%0AUnranked+%7C+%F0%9F%8D%93+Strawberries",
+      "json": {
+        "head": {},
+        "blocks": [
+          {
+            "k": "table",
+            "cols": [
+              {
+                "name": "Tier",
+                "type": "text"
+              },
+              {
+                "name": "Item",
+                "type": "text"
+              }
+            ],
+            "rows": [
+              [
+                "Unranked",
+                "🧀 Cheese"
+              ],
+              [
+                "Unranked",
+                "🍓 Strawberries"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

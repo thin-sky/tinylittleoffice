@@ -1,0 +1,22 @@
+# Pocket Calendar (`dates`), Tiny Little Office
+
+Pick dates and ranges in colored groups, then share the calendar as a link. A document is a link: https://office.thin-sky.cloud/dates/#doc=<percent-encoded TLO>
+
+Inspired by PocketCal: a snapshot of named date groups in a link. The first table has Group, Start, End, Color columns. Dates are inclusive YYYY-MM-DD civil dates, unaffected by time zones. Colors: indigo, red, orange, green, blue, purple. A group with empty dates keeps its name. The head's month (YYYY-MM), week-start (monday or sunday), and weekends (true or false) control the twelve-month view. Toggle a day, add a range, or remove a selected day to split a range. Export .ics or open the dates in the existing full Calendar.
+
+## Shapes
+
+- `ranges` named date ranges, a Group, Start, End and Color table of inclusive civil dates
+
+## Example: named date ranges
+
+```
+Group | Start | End | Color
+--- | --- | --- | ---
+Study together | 2027-01-16 | 2027-01-16 | indigo
+Study together | 2027-02-06 | 2027-02-06 | indigo
+```
+
+As a link: <https://office.thin-sky.cloud/dates/#doc=Group+%7C+Start+%7C+End+%7C+Color%0A---+%7C+---+%7C+---+%7C+---%0AStudy+together+%7C+2027-01-16+%7C+2027-01-16+%7C+indigo%0AStudy+together+%7C+2027-02-06+%7C+2027-02-06+%7C+indigo>
+
+Every shape as a document, a link and JSON: https://office.thin-sky.cloud/examples/dates.json. The whole description: https://office.thin-sky.cloud/llms-full.txt

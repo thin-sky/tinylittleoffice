@@ -5,7 +5,7 @@
  */
 
 /** TEXT values: a backslash, a semicolon and a comma escaped, a newline as \n. */
-export const icsText = (s: string) => s.replace(/\\/g, '\\\\').replace(/;/g, '\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+export const icsText = (s: string) => s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
 /** "2027-03-01" as a DATE value: 20270301. */
 export const icsDate = (iso: string) => iso.replace(/-/g, '');
 /** An instant as a UTC DATE-TIME: 20270301T100000Z. */

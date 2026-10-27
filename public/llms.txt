@@ -8,9 +8,11 @@ The document is TLO (Markdown with a few additions), percent-encoded after `#doc
 https://office.thin-sky.cloud/<app>/#doc=<percent-encoded TLO>
 ```
 
-`<app>` is one of `write`, `outline`, `deck`, `sheet`, `calc`, `draw`, `diagram`, `anim`, `cal`, `trip`, `worksheet`, `study`, `team`. `&title=` names it, `&by=` says who made it, and `&lang=` (`es`, `zh-hant`…) opens the page in one of the site's languages. Words can use any language; emoji, icons and inline code are supported. Keep links under 2,000 characters; validate drafts with try.
+`<app>` is one of `write`, `outline`, `deck`, `sheet`, `calc`, `draw`, `diagram`, `anim`, `cal`, `trip`, `worksheet`, `study`, `team`, `tier`, `dates`. `&title=` names it, `&by=` says who made it, and `&lang=` (`es`, `zh-hant`…) opens the page in one of the site's languages. Words can use any language; emoji, icons and inline code are supported. Keep links under 2,000 characters; validate drafts with try.
 
 With a runtime: `import { link, read, lint } from 'https://office.thin-sky.cloud/api.js'` in a browser, Deno or Bun; `npx tinylittleoffice` in Node, where `skill --into ~/.claude/skills` installs this guide for Claude Code. To learn a shape by example:
+
+New apps need this API or `npm run tinyoffice --` in this fork.
 
 - `npx tinylittleoffice shapes <app>`: what the app reads, a line a shape
 - `npx tinylittleoffice example <app> [shape]`: the smallest document that shows it, its JSON, lint and measures
@@ -20,19 +22,21 @@ https://office.thin-sky.cloud/llms/<app>.txt is a page on one app; https://offic
 
 ## One example per app
 
-- `write` Word Processor, headings: <https://office.thin-sky.cloud/write/#/v1/write/yA7orID8nMzkztZiLSwsYxMCMCFSsp8UFAA>
-- `outline` Outliner, a nested list: <https://office.thin-sky.cloud/outline/#/v1/outline/y0wVnKx9QygeWjcDSzzs1FRjwYN84AktzYPGaClQbDCwgQEU42HsgHZDyD1iHFFVyAQA>
-- `deck` Presentation Builder, a slide of bullets: <https://office.thin-sky.cloud/deck/#/v1/deck/yA7oLHEXFQMcCiwFgGVUMzmQFwLQNVKxipGdkqpCoUJAPLECAKgJKcwuyM_NAMhYKqYnJGTpA1ZUKxZlVqVwA>
-- `sheet` Spreadsheet, a money column: <https://office.thin-sky.cloud/sheet/#/v1/sheet/yAxYlwLxaA8xcwFwDKrngceUDKtsQIiDVyImGC1g~AFnGluYGBiDawtLAgAtYWIDYxmYQMQMjUwMuAA>
-- `calc` Calculator, named lines: <https://office.thin-sky.cloud/calc/#/v1/calc/yQ7LIJTMvD1SyATNLcWYFWCYNVALZKhiameiZGnClFGXmZRcD~aYWQD0FQIYGWIG2AkRGU0FLwdBClaskvyQxByiLIglkAPVA5fQVzLgA>
-- `draw` Drawing Tool, pixel art: <https://office.thin-sky.cloud/draw/#/v1/draw/yQ7LIJTMRGE8pxVzpwMLDSsECLJekp6eXxKWXBIJcSEyoOAhAZMAshAAA>
-- `diagram` Diagram Maker, a mind map: <https://office.thin-sky.cloud/diagram/#/v1/diagram/yA~FsYMhZKeQCSYgQOKelJxalpOaBfeWVn1TMBQA>
-- `anim` Animator, a shape that moves: <https://office.thin-sky.cloud/anim/#/v1/anim/ybVTLCoMwELzvV_gBsayJlEBPPbe3fkGKLg14EHMo_fvOJr5AkR2zMjgkk9md0DMKUiNCMsE7MG1LMuLtKQwQu285EdgNZonjEPuEGOUmfPPUy9mcNE6mwuTBYesHjLwurTKXrL24pnapT2rQwZnDfT1HUq9alOUFtGOFdXMRjUe567zQ4jeg7I7o9Qmjaj_6X9qkSX_HpjyN4VtlHVa1n3sTqTlhWAZHAbzG1I5NR38>
-- `cal` Calendar, things on days: <https://office.thin-sky.cloud/cal/#/v1/cal/y04UYaGika2QMykFAnrmugSEQWSmEZ~aBCs0koNXZEIUQKRMrBWdgyVecWgxO_MBMlp6YmccFAA>
-- `trip` Trip Planner, a route: <https://office.thin-sky.cloud/trip/#/v1/trip/yIzJwMVIMiORyByby5HyQdlMzPTMLIzOQuKmeoYGRMZAFyq8~oEIrDJidgdFfnpiTrQMqr1NTFYDlcFExUH9icTqwoAPqN9WzMDMxAuk30TMyNbQAJQJgqgdn8mRgPgImOhAzMbMIVBlwAQA>
-- `worksheet` Interactive Worksheets, live named fields: <https://office.thin-sky.cloud/worksheet/#/v1/worksheet/ycwOlP6s8SGSFJUL8CIpPUEhlAkMfI62ASC6nRGBBCS7p89JBMW8ExPBgBWXU_KLM9My8xBygE0uSM7jCgYUaMIsi6TBB1uGckZiXDip5QWVEPqjqyKwCF8dAZnJmQSpXMChDARXahjv6hbi6xAe7BoV5~rkH6zs5BrvCechGOoHsVcgtzSnJLMjJBMYYAA>
-- `study` Study Packs, question and answer cards: <https://office.thin-sky.cloud/study/#/v1/study/yXZXBDYAgDEXvTuEELmA6gzM00UMFgUDY31cOxnCF_qb97f_9t~jkGIRP67HcaCcaBhT65gxgZrXBEzqjKPThrwdrW3JrxgHBstV1sw~Y1uDK57teJxUxq5x0FYkmAiap44lkIL0UrMeDHyMX6v5AIxHMvw>
-- `team` Team Paste, a Showdown team export: <https://office.thin-sky.cloud/team/#/v1/team/yRZXNToQwFIX3fYq~gDEhmMxSfiRjJEqGqGuQ1mmEFguE~PZ~RSIrekPCPZx7~t1NkFs7t1pRqd6MuC7vGccwykuIbtKa3jBsmXsTYice3vhIFJ_kuZK3MrqL4IDmdJL1mIvUEefngB2FMWe0ocGGc714zeP1hneWw8UBNCHSxnvyoNauoW92dWF3pNzzo3O9Gg2IVjPszemZzF_0jEPPXUU9KpF0zRDw~S~gNN8LJAxjpcp6yC4zN7TNTFlNPx_gXRaN_ZyoC34fqKJOFApsswi8RVSp9Azz_HRIeiQZqPT+tdEja_Ih3N_4U5SIDbXrpD0WVIz7y_WpGiieLxfJFB2NKpSBxzTIIZrEoeiC6jSBk5Bc>
+- `write`: <https://office.thin-sky.cloud/write/#/v1/write/yA7orID8nMzkztZiLSwsYxMCMCFSsp8UFAA>
+- `outline`: <https://office.thin-sky.cloud/outline/#/v1/outline/y0wVnKx9QygeWjcDSzzs1FRjwYN84AktzYPGaClQbDCwgQEU42HsgHZDyD1iHFFVyAQA>
+- `deck`: <https://office.thin-sky.cloud/deck/#/v1/deck/yA7oLHEXFQMcCiwFgGVUMzmQFwLQNVKxipGdkqpCoUJAPLECAKgJKcwuyM_NAMhYKqYnJGTpA1ZUKxZlVqVwA>
+- `sheet`: <https://office.thin-sky.cloud/sheet/#/v1/sheet/yAxYlwLxaA8xcwFwDKrngceUDKtsQIiDVyImGC1g~AFnGluYGBiDawtLAgAtYWIDYxmYQMQMjUwMuAA>
+- `calc`: <https://office.thin-sky.cloud/calc/#/v1/calc/yQ7LIJTMvD1SyATNLcWYFWCYNVALZKhiameiZGnClFGXmZRcD~aYWQD0FQIYGWIG2AkRGU0FLwdBClaskvyQxByiLIglkAPVA5fQVzLgA>
+- `draw`: <https://office.thin-sky.cloud/draw/#/v1/draw/yQ7LIJTMRGE8pxVzpwMLDSsECLJekp6eXxKWXBIJcSEyoOAhAZMAshAAA>
+- `diagram`: <https://office.thin-sky.cloud/diagram/#/v1/diagram/yA~FsYMhZKeQCSYgQOKelJxalpOaBfeWVn1TMBQA>
+- `anim`: <https://office.thin-sky.cloud/anim/#/v1/anim/ybVTLCoMwELzvV_gBsayJlEBPPbe3fkGKLg14EHMo_fvOJr5AkR2zMjgkk9md0DMKUiNCMsE7MG1LMuLtKQwQu285EdgNZonjEPuEGOUmfPPUy9mcNE6mwuTBYesHjLwurTKXrL24pnapT2rQwZnDfT1HUq9alOUFtGOFdXMRjUe567zQ4jeg7I7o9Qmjaj_6X9qkSX_HpjyN4VtlHVa1n3sTqTlhWAZHAbzG1I5NR38>
+- `cal`: <https://office.thin-sky.cloud/cal/#/v1/cal/y04UYaGika2QMykFAnrmugSEQWSmEZ~aBCs0koNXZEIUQKRMrBWdgyVecWgxO_MBMlp6YmccFAA>
+- `trip`: <https://office.thin-sky.cloud/trip/#/v1/trip/yIzJwMVIMiORyByby5HyQdlMzPTMLIzOQuKmeoYGRMZAFyq8~oEIrDJidgdFfnpiTrQMqr1NTFYDlcFExUH9icTqwoAPqN9WzMDMxAuk30TMyNbQAJQJgqgdn8mRgPgImOhAzMbMIVBlwAQA>
+- `worksheet`: <https://office.thin-sky.cloud/worksheet/#/v1/worksheet/ycwOlP6s8SGSFJUL8CIpPUEhlAkMfI62ASC6nRGBBCS7p89JBMW8ExPBgBWXU_KLM9My8xBygE0uSM7jCgYUaMIsi6TBB1uGckZiXDip5QWVEPqjqyKwCF8dAZnJmQSpXMChDARXahjv6hbi6xAe7BoV5~rkH6zs5BrvCechGOoHsVcgtzSnJLMjJBMYYAA>
+- `study`: <https://office.thin-sky.cloud/study/#/v1/study/yXZXBDYAgDEXvTuEELmA6gzM00UMFgUDY31cOxnCF_qb97f_9t~jkGIRP67HcaCcaBhT65gxgZrXBEzqjKPThrwdrW3JrxgHBstV1sw~Y1uDK57teJxUxq5x0FYkmAiap44lkIL0UrMeDHyMX6v5AIxHMvw>
+- `team`: <https://office.thin-sky.cloud/team/#/v1/team/yRZXNToQwFIX3fYq~gDEhmMxSfiRjJEqGqGuQ1mmEFguE~PZ~RSIrekPCPZx7~t1NkFs7t1pRqd6MuC7vGccwykuIbtKa3jBsmXsTYice3vhIFJ_kuZK3MrqL4IDmdJL1mIvUEefngB2FMWe0ocGGc714zeP1hneWw8UBNCHSxnvyoNauoW92dWF3pNzzo3O9Gg2IVjPszemZzF_0jEPPXUU9KpF0zRDw~S~gNN8LJAxjpcp6yC4zN7TNTFlNPx_gXRaN_ZyoC34fqKJOFApsswi8RVSp9Azz_HRIeiQZqPT+tdEja_Ih3N_4U5SIDbXrpD0WVIz7y_WpGiieLxfJFB2NKpSBxzTIIZrEoeiC6jSBk5Bc>
+- `tier`: <https://office.thin-sky.cloud/tier/#/v1/tier/yC8kEh4QnMI~D~JAEwRWaV5SYlw3MUzUKH~Yvb1BwBroZWCaiCPdOBoYf0AvAoARWNsVcAA>
+- `dates`: <https://office.thin-sky.cloud/dates/#/v1/dates/ycweWngWwyADSruBAdM7PyS8CyWMmFq7gktIUUMkGrRhqQC4y1zUw1DU0Q~cAYyQzPR~XDiNdA4QOKAeqAwA>
 
 ## A document inside a document
 

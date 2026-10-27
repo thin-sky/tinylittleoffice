@@ -9,3 +9,17 @@ export function replaceDocument(before: Doc, text: string): Op[] {
     { op: 'splice', at: 0, n: before.blocks.length, blocks: after.blocks },
   ];
 }
+
+/** Replace the first table, keeping the rest of the document and its metadata. */
+export function replaceTable(doc: Doc, names: string[], rows: string[][]): Op[] {
+  const at = doc.blocks.findIndex((b) => b.k === 'table');
+  const before = doc.blocks[at];
+  return [
+    {
+      op: 'splice',
+      at: at < 0 ? doc.blocks.length : at,
+      n: at < 0 ? 0 : 1,
+      blocks: [{ ...(before?.k === 'table' ? before : {}), k: 'table', cols: names.map((name) => ({ name, type: 'text' })), rows }],
+    },
+  ];
+}

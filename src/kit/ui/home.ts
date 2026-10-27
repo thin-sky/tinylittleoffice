@@ -346,6 +346,8 @@ export class ToHome extends LitElement {
           <button class="to-btn" type="button" @click=${() => void this.openExample('worksheet', 'recipe')}>${t('sky-recipe')}</button>
           <button class="to-btn" type="button" @click=${() => void this.openExample('worksheet', 'rpg')}>${t('sky-rpg')}</button>
           <button class="to-btn" type="button" @click=${() => void this.openExample('team', 'rain')}>${t('sky-team')}</button>
+          <button class="to-btn" type="button" @click=${() => void this.openExample('tier', 'snacks')}>${t('sky-tier')}</button>
+          <button class="to-btn" type="button" @click=${() => void this.openExample('dates', 'plans')}>${t('sky-dates')}</button>
         </div>
         <small>${t('sky-home-credit')}</small>
       </section>

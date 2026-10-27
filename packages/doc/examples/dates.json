@@ -1,0 +1,54 @@
+{
+  "app": "dates",
+  "name": "Pocket Calendar",
+  "shapes": [
+    {
+      "id": "ranges",
+      "name": "named date ranges",
+      "for": "a Group, Start, End and Color table of inclusive civil dates",
+      "from": "template plans",
+      "text": "Group | Start | End | Color\n--- | --- | --- | ---\nStudy together | 2027-01-16 | 2027-01-16 | indigo\nStudy together | 2027-02-06 | 2027-02-06 | indigo\n",
+      "link": "https://office.thin-sky.cloud/dates/#doc=Group+%7C+Start+%7C+End+%7C+Color%0A---+%7C+---+%7C+---+%7C+---%0AStudy+together+%7C+2027-01-16+%7C+2027-01-16+%7C+indigo%0AStudy+together+%7C+2027-02-06+%7C+2027-02-06+%7C+indigo",
+      "json": {
+        "head": {},
+        "blocks": [
+          {
+            "k": "table",
+            "cols": [
+              {
+                "name": "Group",
+                "type": "text"
+              },
+              {
+                "name": "Start",
+                "type": "text"
+              },
+              {
+                "name": "End",
+                "type": "text"
+              },
+              {
+                "name": "Color",
+                "type": "text"
+              }
+            ],
+            "rows": [
+              [
+                "Study together",
+                "2027-01-16",
+                "2027-01-16",
+                "indigo"
+              ],
+              [
+                "Study together",
+                "2027-02-06",
+                "2027-02-06",
+                "indigo"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

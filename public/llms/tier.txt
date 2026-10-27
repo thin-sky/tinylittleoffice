@@ -1,0 +1,22 @@
+# Tier List Maker (`tier`), Tiny Little Office
+
+Rank text and emoji cards in editable tiers, all inside a link. A document is a link: https://office.thin-sky.cloud/tier/#doc=<percent-encoded TLO>
+
+The first table has Tier and Item columns. Rows are grouped by the first appearance of each tier; a row with an empty item keeps that tier visible. Cards are text or emoji. Edit controls move or reorder them; desktop dragging moves a card to a tier.
+
+## Shapes
+
+- `ranks` ordered tier rows, a Tier and Item table; empty items preserve empty tiers
+
+## Example: ordered tier rows
+
+```
+Tier | Item
+--- | ---
+Unranked | 🧀 Cheese
+Unranked | 🍓 Strawberries
+```
+
+As a link: <https://office.thin-sky.cloud/tier/#doc=Tier+%7C+Item%0A---+%7C+---%0AUnranked+%7C+%F0%9F%A7%80+Cheese%0AUnranked+%7C+%F0%9F%8D%93+Strawberries>
+
+Every shape as a document, a link and JSON: https://office.thin-sky.cloud/examples/tier.json. The whole description: https://office.thin-sky.cloud/llms-full.txt

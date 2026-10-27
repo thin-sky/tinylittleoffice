@@ -44,3 +44,11 @@ Rollback: restore previous Compose and Caddy files, stop office, and reload Cadd
 The public service runs application commit 5d0d9d38c5b40ddc315fa3e496f134d5a9f260dc, image thin-sky-office:5d0d9d3. Its verified build is retained under /opt/homelab/office/releases/5d0d9d3. Config backups use the suffix .office-backup.20261027T041613Z. The persistent database is in homelab_office_data.
 
 Public HTTPS, all six desktop/mobile functional and accessibility checks, API link origins, decision and RPG formulas, actual Share short-link creation and decryption, and database persistence across container recreation were checked after deployment.
+
+## Organizer additions
+
+Tier List Maker ranks text and emoji cards in named rows, with desktop drag and drop and Edit controls for moving, reordering, renaming and removing cards on touch or keyboard. Pocket Calendar is inspired by [PocketCal](https://github.com/cassidoo/pocketcal): twelve months, named date groups, independent overlapping ranges, Monday/Sunday starts, optional weekends, and iCalendar export. Both use the same TLO tables and compressed document links. PocketCal code and its licensing/payment integration are not embedded.
+
+The experiment stays in this fork; do not open upstream pull requests or create review PRs for routine experiments. The first draft PR in this fork was closed after the user clarified that preference.
+
+Document payloads currently choose raw UTF-8, DEFLATE, or DEFLATE with the frozen shared dictionary; Brotli is not enabled. HTTP compression is separately configured as zstd/gzip in Caddy. Old document URLs continue to open.

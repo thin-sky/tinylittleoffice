@@ -79,8 +79,10 @@ Write ordinary Markdown: `#` headings, paragraphs, `- ` and `1. ` lists nested b
 | `worksheet` | Interactive Worksheets | Live fields, calculated results, and checklists in a shareable document. |
 | `study` | Study Packs | Flashcards, cloze questions, and a practice session inside a link. |
 | `team` | Team Paste | A Pokémon Showdown export as a self-contained team card. |
+| `tier` | Tier List Maker | Rank text and emoji cards in editable tiers, all inside a link. |
+| `dates` | Pocket Calendar | Pick dates and ranges in colored groups, then share the calendar as a link. |
 
-Before writing for an app, read its reference, which says what it reads and gives one of its own templates as the example: [write](references/write.md), [outline](references/outline.md), [deck](references/deck.md), [sheet](references/sheet.md), [calc](references/calc.md), [draw](references/draw.md), [diagram](references/diagram.md), [anim](references/anim.md), [cal](references/cal.md), [trip](references/trip.md), [worksheet](references/worksheet.md), [study](references/study.md), [team](references/team.md). The files every document downloads, short links, the API and the command line are in [references/api.md](references/api.md); the keys that drive the editors in a browser are in [references/editors.md](references/editors.md).
+Before writing for an app, read its reference, which says what it reads and gives one of its own templates as the example: [write](references/write.md), [outline](references/outline.md), [deck](references/deck.md), [sheet](references/sheet.md), [calc](references/calc.md), [draw](references/draw.md), [diagram](references/diagram.md), [anim](references/anim.md), [cal](references/cal.md), [trip](references/trip.md), [worksheet](references/worksheet.md), [study](references/study.md), [team](references/team.md), [tier](references/tier.md), [dates](references/dates.md). The files every document downloads, short links, the API and the command line are in [references/api.md](references/api.md); the keys that drive the editors in a browser are in [references/editors.md](references/editors.md).
 
 ## Choosing an app
 

@@ -254,7 +254,7 @@ test('iCalendar: floating days, instants, repeats as RRULEs, lines folded at 75 
   expect(ics).toContain('DTSTART;VALUE=DATE:20200103\r\nDTEND;VALUE=DATE:20200105\r\nRRULE:FREQ=WEEKLY;COUNT=9\r\nSUMMARY:Offsite');
   expect(ics).toContain('DTSTART:20200101T000000Z\r\nDTEND:20200101T013000Z\r\nRRULE:FREQ=MONTHLY;UNTIL=20200105T045900Z\r\nSUMMARY:Call');
   expect(ics).toContain('RRULE:FREQ=YEARLY\r\nSUMMARY:Birthday');
-  expect(ics).toContain('SUMMARY:Once\\, with\; marks');
+  expect(ics).toContain('SUMMARY:Once\\, with\\; marks');
   expect(ics).toContain('DESCRIPTION:50% done');
   expect(ics.match(/BEGIN:VEVENT/g)).toHaveLength(5);
   expect(ics.endsWith('END:VCALENDAR\r\n')).toBe(true);
