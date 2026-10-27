@@ -16,7 +16,9 @@
     "write": 6529,
     "worksheet": 2400,
     "study": 2400,
-    "team": 1000
+    "team": 1000,
+    "tier": 1200,
+    "dates": 1500
   },
   "languages": {
     "ar": 51322,
@@ -43,6 +45,6 @@
   "api": 28500,
   "apiParts": 309000,
   "fonts": 1142412,
-  "files": 130,
+  "files": 140,
   "requests": 5
 }
