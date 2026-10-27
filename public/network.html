@@ -40,6 +40,28 @@ dd{margin:0}
 <p>Tiny Little Office keeps a document in its link. Opening one asks the site for its own files and nothing else. This page lists every other request the site can make: when it happens, what it carries, and what stops it. The Content-Security-Policy in <code>public/_headers</code> allows these places and no others, so a request not on this list is refused by the browser itself.</p>
 <h2>Every request the site can make</h2>
 <section class="reach">
+<h3><code>lipu-sona.pona.la</code></h3>
+<p>The learning reference named in the Toki Pona study pack.</p>
+<dl>
+<dt>When</dt><dd>after a tap</dd>
+<dt>Carries</dt><dd>Only the reference address, opened by the reader</dd>
+<dt>Stopped by</dt><dd>Not opening the reference</dd>
+<dt>Made by</dt><dd><code>apps/study/templates.ts</code></dd>
+<dt>Allowed by</dt><dd>none: it opens in a new tab</dd>
+</dl>
+</section>
+<section class="reach">
+<h3><code>tokipona.org</code></h3>
+<p>The official Toki Pona site named in the study pack.</p>
+<dl>
+<dt>When</dt><dd>after a tap</dd>
+<dt>Carries</dt><dd>Only the reference address, opened by the reader</dd>
+<dt>Stopped by</dt><dd>Not opening the reference</dd>
+<dt>Made by</dt><dd><code>apps/study/templates.ts</code></dd>
+<dt>Allowed by</dt><dd>none: it opens in a new tab</dd>
+</dl>
+</section>
+<section class="reach">
 <h3><code>tinylittleoffice.com</code></h3>
 <p>The site’s own files: the page, the app file (every app, the English words, the icons, the emoji and the math), its stylesheet, an app’s templates when its list opens, a language when a page is in it, and the type (IBM Plex, a face when a page’s words need it), each fetched once and kept a year.</p>
 <dl>

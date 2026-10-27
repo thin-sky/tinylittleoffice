@@ -1,0 +1,153 @@
+/* Thin Sky additions share the existing type, colors and cascade. */
+@layer apps {
+  .sky-document {
+    max-inline-size: 58rem;
+    margin-inline: auto;
+    padding: 1.5rem 1rem 4rem;
+    overflow-wrap: anywhere;
+  }
+  .sky-document h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-block: 0.5rem 1rem;
+  }
+  .sky-document h2 {
+    font-size: 1.1rem;
+    margin-block: 0 0.75rem;
+  }
+  .sky-document p {
+    line-height: 1.6;
+  }
+  .sky-eyebrow {
+    color: var(--to-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .sky-muted,
+  .sky-source p {
+    color: var(--to-ink-3);
+    font-size: 0.9rem;
+  }
+  .sky-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: 1rem;
+    margin-block: 1.5rem;
+  }
+  .sky-card {
+    background: var(--to-surface);
+    border: 1px solid var(--to-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    min-inline-size: 0;
+  }
+  .sky-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .sky-field > span:first-child {
+    font-weight: 600;
+  }
+  .sky-field input:not([type='checkbox']),
+  .sky-source textarea,
+  .sky-paste {
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-inline-size: 0;
+    border: 1px solid var(--to-border-strong);
+    border-radius: 0.375rem;
+    padding: 0.7rem;
+    color: var(--to-ink);
+    background: var(--to-input-bg);
+    font: inherit;
+  }
+  .sky-field input[type='checkbox'] {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+  }
+  .sky-field output {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--to-accent);
+  }
+  .sky-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-block: 1rem;
+  }
+  .sky-actions .to-btn,
+  .sky-source .to-btn {
+    min-block-size: 2.75rem;
+    padding-inline: 1rem;
+  }
+  .sky-primary {
+    background: var(--to-accent);
+    color: var(--to-on-accent);
+    border-color: var(--to-accent);
+  }
+  .sky-source {
+    margin-block-start: 2rem;
+    border-block-start: 1px solid var(--to-border);
+    padding-block-start: 1rem;
+  }
+  .sky-source summary {
+    cursor: pointer;
+    padding-block: 0.5rem;
+  }
+  .sky-source textarea,
+  .sky-paste {
+    min-block-size: 16rem;
+    font-family: var(--to-font-mono);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    resize: vertical;
+  }
+  .sky-source textarea {
+    margin-block-end: 1rem;
+  }
+  .sky-study-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin-block: 1.5rem;
+  }
+  .sky-study-prompt {
+    font-size: 2rem;
+    line-height: 1.35;
+    margin-block: 1rem;
+  }
+  .sky-study-answer {
+    font-size: 1.25rem;
+    padding-block: 1rem;
+    border-block-start: 1px solid var(--to-border);
+  }
+  .sky-study-card .sky-actions {
+    justify-content: center;
+  }
+  .sky-progress {
+    inline-size: 100%;
+    accent-color: var(--to-accent);
+  }
+  .sky-team-list {
+    padding-inline-start: 1.1rem;
+    line-height: 1.8;
+  }
+  .sky-note {
+    border-inline-start: 0.2rem solid var(--to-accent);
+    padding-inline-start: 1rem;
+  }
+  .sky-home-intro {
+    padding: 1rem;
+    margin-block-end: 1.25rem;
+    background: var(--to-accent-soft);
+    border-radius: 0.75rem;
+  }
+  .sky-home-intro p {
+    margin-block: 0.5rem;
+  }
+}

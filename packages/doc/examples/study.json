@@ -1,0 +1,48 @@
+{
+  "app": "study",
+  "name": "Study Packs",
+  "shapes": [
+    {
+      "id": "cards",
+      "name": "question and answer cards",
+      "for": "a first table with Front, Back and optional Hint columns",
+      "from": "template toki-pona",
+      "text": "Front | Back | Hint\n--- | --- | ---\njan li moku. | A person is eating. | One possible reading; li marks the predicate\nona ==li== pona. | li | Supply the missing predicate marker\n",
+      "link": "https://office.thin-sky.cloud/study/#doc=Front+%7C+Back+%7C+Hint%0A---+%7C+---+%7C+---%0Ajan+li+moku.+%7C+A+person+is+eating.+%7C+One+possible+reading%3B+li+marks+the+predicate%0Aona+%3D%3Dli%3D%3D+pona.+%7C+li+%7C+Supply+the+missing+predicate+marker",
+      "json": {
+        "head": {},
+        "blocks": [
+          {
+            "k": "table",
+            "cols": [
+              {
+                "name": "Front",
+                "type": "text"
+              },
+              {
+                "name": "Back",
+                "type": "text"
+              },
+              {
+                "name": "Hint",
+                "type": "text"
+              }
+            ],
+            "rows": [
+              [
+                "jan li moku.",
+                "A person is eating.",
+                "One possible reading; li marks the predicate"
+              ],
+              [
+                "ona ==li== pona.",
+                "li",
+                "Supply the missing predicate marker"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

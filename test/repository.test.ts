@@ -10,7 +10,7 @@ import { yaml } from './yaml.ts';
 
 const root = join(import.meta.dirname, '..');
 const read = (path: string) => readFileSync(join(root, path), 'utf8');
-const URL = 'https://github.com/aboard-io/tinylittleoffice';
+const URL = 'https://github.com/thin-sky/tinylittleoffice';
 
 const ymls = (dir: string): string[] =>
   readdirSync(join(root, dir), { recursive: true })
@@ -42,7 +42,7 @@ test('the packages say what they are and where they live: the site stays unpubli
     const p = JSON.parse(read(path));
     expect(p.private, path).toBe(path === 'package.json' ? true : undefined);
     expect(p.license, path).toBe('MIT');
-    expect(p.homepage, path).toBe('https://tinylittleoffice.com');
+    expect(p.homepage, path).toBe('https://office.thin-sky.cloud');
     expect(p.repository, path).toEqual({ type: 'git', url: URL, ...(path === 'package.json' ? {} : { directory: 'packages/doc' }) });
     expect(p.bugs, path).toEqual({ url: `${URL}/issues` });
   }

@@ -146,7 +146,7 @@ test('shapes, example and try: what an app reads, the smallest document of each 
   expect(venn).toMatch(/^## venn: a Venn diagram\n/);
   for (const part of [
     '```\n---\nkind: venn\n---\n',
-    'As a link: https://tinylittleoffice.com/diagram/#doc=',
+    'As a link: https://office.thin-sky.cloud/diagram/#doc=',
     'The JSON:\n\n{\n  "head": {',
     'The lint: clean',
     'The measures:\n\n{\n  "app": "diagram"',

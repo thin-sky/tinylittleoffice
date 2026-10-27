@@ -10,14 +10,14 @@
     "llm",
     "markdown"
   ],
-  "homepage": "https://tinylittleoffice.com",
+  "homepage": "https://office.thin-sky.cloud",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aboard-io/tinylittleoffice",
+    "url": "https://github.com/thin-sky/tinylittleoffice",
     "directory": "packages/doc"
   },
   "bugs": {
-    "url": "https://github.com/aboard-io/tinylittleoffice/issues"
+    "url": "https://github.com/thin-sky/tinylittleoffice/issues"
   },
   "license": "MIT",
   "type": "module",

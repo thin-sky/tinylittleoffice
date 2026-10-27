@@ -34,7 +34,7 @@ export interface Example {
   json: Doc;
 }
 
-const SITE = 'https://tinylittleoffice.com/';
+const SITE = 'https://office.thin-sky.cloud/';
 
 // What a document holds, asked of its blocks.
 const any = (d: Doc, f: (b: Block) => boolean) => d.blocks.some(f);
@@ -61,6 +61,16 @@ const PICTURES = ['draw', 'diagram', 'trip', 'cal'];
 
 /** Every app's shapes, the one it is most often asked for first. */
 export const SHAPES: Record<string, Shape[]> = {
+  worksheet: [{ id: 'fields', name: 'live named fields', for: 'editable values and calculated outputs in a named table', has: (d) => column(d, 'name') && formula(d) }],
+  study: [
+    {
+      id: 'cards',
+      name: 'question and answer cards',
+      for: 'a first table with Front, Back and optional Hint columns',
+      has: (d) => tables(d).some((t) => t.cols[0]?.name === 'Front' && t.rows.length > 0),
+    },
+  ],
+  team: [{ id: 'showdown', name: 'a Showdown team export', for: 'original Showdown text inside a showdown fence', has: (d) => any(d, (b) => b.k === 'fence' && b.lang === 'showdown') }],
   write: [
     { id: 'heading', name: 'headings', for: 'a text in sections: # and ## lines', has: (d) => count(d, (b) => b.k === 'h' && !hasClass(b, 'title')) >= 1 && count(d, (b) => b.k === 'p') >= 1 },
     { id: 'title', name: 'a title', for: 'the first line set large: # Words {.title}', has: (d) => any(d, (b) => b.k === 'h' && hasClass(b, 'title')) },

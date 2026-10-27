@@ -33,7 +33,7 @@ kind: org
 ~ Cy Lund -- Eve Marsh: design partner
 ```
 
-As a link: <https://tinylittleoffice.com/diagram/#doc=---%0Atitle%3A+Who+reports+to+whom%0Akind%3A+org%0A---%0A-+Ada+Diaz+%7C+Chief+executive%0A++-+Ben+Okoro+%7C+Engineering%0A++++-+Cy+Lund+%7C+Platform%0A++++-+Di+Shah+%7C+Apps%0A++-+Eve+Marsh+%7C+Design%0A++-+Flo+Reyes+%7C+Sales%0A++++-+Gus+Patel+%7C+Accounts%0A%0A~+Cy+Lund+--+Eve+Marsh%3A+design+partner>
+As a link: <https://office.thin-sky.cloud/diagram/#doc=---%0Atitle%3A+Who+reports+to+whom%0Akind%3A+org%0A---%0A-+Ada+Diaz+%7C+Chief+executive%0A++-+Ben+Okoro+%7C+Engineering%0A++++-+Cy+Lund+%7C+Platform%0A++++-+Di+Shah+%7C+Apps%0A++-+Eve+Marsh+%7C+Design%0A++-+Flo+Reyes+%7C+Sales%0A++++-+Gus+Patel+%7C+Accounts%0A%0A~+Cy+Lund+--+Eve+Marsh%3A+design+partner>
 
 Cats and dogs:
 
@@ -47,6 +47,6 @@ kind: venn
 - Cats & Dogs: shed on the sofa, love a warm spot, wake you at six
 ```
 
-As a link: <https://tinylittleoffice.com/diagram/#doc=---%0Atitle%3A+Cats+and+dogs%0Akind%3A+venn%0A---%0A-+Cats%3A+purr%2C+climb+curtains%2C+use+a+litter+box%0A-+Dogs%3A+fetch%2C+need+walks%2C+guard+the+house%0A-+Cats+%26+Dogs%3A+shed+on+the+sofa%2C+love+a+warm+spot%2C+wake+you+at+six>
+As a link: <https://office.thin-sky.cloud/diagram/#doc=---%0Atitle%3A+Cats+and+dogs%0Akind%3A+venn%0A---%0A-+Cats%3A+purr%2C+climb+curtains%2C+use+a+litter+box%0A-+Dogs%3A+fetch%2C+need+walks%2C+guard+the+house%0A-+Cats+%26+Dogs%3A+shed+on+the+sofa%2C+love+a+warm+spot%2C+wake+you+at+six>
 
 Templates: Mind map, Launch plan, The garden this year, Moving abroad, Studying for an exam, Org chart, A small company, An elementary school, A restaurant kitchen, Family tree, Three generations, The Brontës, A family with a godmother, Swimlanes, From order to doorstep, Hiring someone, An expense report, Timeline, Computing, briefly, A building project, Apollo 11, Venn, Fast, cheap, good, Cats and dogs, Who can do what, Seating chart, A wedding dinner, Board game night, A classroom, Network, How an app hangs together, The water cycle, The house network. Its own files: `.svg`.

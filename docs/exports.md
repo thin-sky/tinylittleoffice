@@ -61,6 +61,7 @@ there it is drawn still, at its resting moment (`ViewOpts.still`).
 | Calendar | `.csv` | CSV |
 | Trip Planner | `.gpx` | GPX route |
 | Trip Planner | `.geojson` | GeoJSON |
+| Team Paste | `.txt` | Showdown export text |
 
 A seating chart (Diagram Maker, `kind: seating`) prints its place cards from its bar: a card a guest, eight to a
 letter sheet, with lines to cut along.

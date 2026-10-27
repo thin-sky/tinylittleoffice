@@ -1,0 +1,27 @@
+# Interactive Worksheets (`worksheet`), Tiny Little Office
+
+Live fields, calculated results, and checklists in a shareable document. A document is a link: https://office.thin-sky.cloud/worksheet/#doc=<percent-encoded TLO>
+
+One table: Field:name | Value | Unit | Hint. The first column names the Value cell for formulas.
+Values starting with = are calculated outputs; other values are editable. Unit is text, check, number, or a displayed unit such as g.
+Paragraphs provide instructions and task-list items are live checkboxes. Share an updated link to share the filled worksheet.
+
+Templates: Decision scorecard, Recipe card, Adventure sheet.
+
+## Shapes
+
+- `fields` live named fields, editable values and calculated outputs in a named table
+
+## Example: live named fields
+
+```
+Field:name | Value | Unit | Hint
+--- | --- | --- | ---
+Base servings | 2 | number | The original batch
+Wanted servings | 4 | number | Change this to resize the recipe
+Scale | =WANTED_SERVINGS/BASE_SERVINGS | number | Batch multiplier
+```
+
+As a link: <https://office.thin-sky.cloud/worksheet/#doc=Field%3Aname+%7C+Value+%7C+Unit+%7C+Hint%0A---+%7C+---+%7C+---+%7C+---%0ABase+servings+%7C+2+%7C+number+%7C+The+original+batch%0AWanted+servings+%7C+4+%7C+number+%7C+Change+this+to+resize+the+recipe%0AScale+%7C+%3DWANTED_SERVINGS%2FBASE_SERVINGS+%7C+number+%7C+Batch+multiplier>
+
+Every shape as a document, a link and JSON: https://office.thin-sky.cloud/examples/worksheet.json. The whole description: https://office.thin-sky.cloud/llms-full.txt

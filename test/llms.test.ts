@@ -14,21 +14,21 @@ import { subPage } from '../src/apps/deck/view.ts';
 
 const at = (p: string) => fileURLToPath(new URL(`../${p}`, import.meta.url));
 const file = (p: string) => readFileSync(at(p), 'utf8');
-const API = "import { link, read, lint } from 'https://tinylittleoffice.com/api.js'";
+const API = "import { link, read, lint } from 'https://office.thin-sky.cloud/api.js'";
 
 test('/llms.txt is short: under 6 KB, its first screen under 1,500 tokens, with the link, the API line and the three commands', () => {
   const short = file('public/llms.txt');
   expect(new TextEncoder().encode(short).length).toBeLessThan(6 * 1024);
   const first = short.slice(0, short.indexOf('\n## '));
   expect(Math.ceil(first.length / 4)).toBeLessThan(1500);
-  expect(first).toContain('https://tinylittleoffice.com/<app>/#doc=<percent-encoded TLO>');
+  expect(first).toContain('https://office.thin-sky.cloud/<app>/#doc=<percent-encoded TLO>');
   expect(first).toContain(API);
   for (const cmd of ['shapes', 'example', 'try']) expect(first).toContain(`npx tinylittleoffice ${cmd}`);
   expect(first).toContain('/llms/<app>.txt');
   expect(first).toContain('/examples/<app>.json');
   // The skill, named in the runtime line's clause, with the line that installs it (Paul, 2026-10-12).
   expect(first).toContain('`npx tinylittleoffice` in Node, where `skill --into ~/.claude/skills` installs this guide for Claude Code.');
-  expect(short).toContain('The whole description: https://tinylittleoffice.com/llms-full.txt');
+  expect(short).toContain('The whole description: https://office.thin-sky.cloud/llms-full.txt');
   // The plain form first, the API second.
   expect(short.indexOf('#doc=')).toBeLessThan(short.indexOf(API));
   // The packed form the site and the API's link write is named beside the plain one, so an agent knows both open.
@@ -40,7 +40,7 @@ test('/llms.txt has one example per app, a plain link each, and each lints clean
   for (const a of apps()) {
     const line = short.split('\n').find((l) => l.startsWith(`- \`${a.id}\``));
     expect(line, a.id).toBeDefined();
-    const url = /<(https:\/\/tinylittleoffice\.com\/[^>]+)>/.exec(line!)![1];
+    const url = /<(https:\/\/office\.thin-sky\.cloud\/[^>]+)>/.exec(line!)![1];
     const r = read(url);
     expect(r.app).toBe(a.id);
     expect(await lint(r.app, r.text)).toStrictEqual([]);
@@ -62,10 +62,10 @@ test('a page per app, under 4 KB: its shapes, an example and its rules', async (
     const page = file(`public/llms/${a.id}.txt`);
     expect(new TextEncoder().encode(page).length, a.id).toBeLessThan(4 * 1024);
     for (const s of SHAPES[a.id]) expect(page, `${a.id} ${s.id}`).toContain(`\`${s.id}\``);
-    expect(page).toContain(`https://tinylittleoffice.com/examples/${a.id}.json`);
+    expect(page).toContain(`https://office.thin-sky.cloud/examples/${a.id}.json`);
   }
   // The pages' address, once, above the examples.
-  expect(file('public/llms.txt')).toContain('https://tinylittleoffice.com/llms/<app>.txt is a page on one app');
+  expect(file('public/llms.txt')).toContain('https://office.thin-sky.cloud/llms/<app>.txt is a page on one app');
 });
 
 // Paul, 2026-10-12: an agent wrote that decks are text-only and the Animator's format unpublished, and shipped four
@@ -77,7 +77,7 @@ test('/llms.txt says a document goes inside another, before the three rules, wit
   expect(at).toBeLessThan(short.indexOf('\n## Three rules agents break first\n'));
   const section = short.slice(at, short.indexOf('\n## Three rules'));
   for (const words of ['a fence named by any of the ten app ids', '```` ```anim ````', 'an animation moves on its slide', 'edited in place']) expect(section).toContain(words);
-  const url = /<(https:\/\/tinylittleoffice\.com\/deck\/#doc=[^>]+)>/.exec(section)![1];
+  const url = /<(https:\/\/office\.thin-sky\.cloud\/deck\/#[^>]+)>/.exec(section)![1];
   const r = read(url);
   expect(r.app).toBe('deck');
   expect(r.text.length).toBeLessThan(600);
@@ -92,7 +92,10 @@ test('/llms.txt says a document goes inside another, before the three rules, wit
   expect(page.svg).toContain('<animateTransform');
   expect(page.alt).toBe('The Moon goes around the Earth, lit from the left by the Sun.');
   // And the skill says the same, in its own section.
-  expect(file('skill/tinyoffice/SKILL.md')).toContain(section.trim());
+  const skill = file('skill/tinyoffice/SKILL.md');
+  expect(skill).toContain(section.slice(0, section.indexOf('<https://')).trim());
+  const skillUrl = /<(https:\/\/office\.thin-sky\.cloud\/deck\/#[^>]+)>/.exec(skill)![1];
+  expect(read(skillUrl)).toEqual(r);
 });
 
 test('the deck’s, the Word Processor’s and the Outliner’s pages each say a fence named by any app puts that document there', () => {

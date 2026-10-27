@@ -33,9 +33,10 @@ import { plainLink, readPlain } from '../src/kit/core/plain.ts';
 import { skillCommands } from './commands.ts';
 import { cut, examplesOf, type Example } from './shapes.ts';
 import { lint } from '../src/lint.ts';
+import { encodeDoc, withBreaks } from '../src/kit/core/codec.ts';
 import { generate } from './generated.ts';
 
-const SITE = 'https://tinylittleoffice.com/';
+const SITE = 'https://office.thin-sky.cloud/';
 /** The API's line, as the short guide gives it. */
 const API_LINE = `import { link, read, lint } from '${SITE}api.js'`;
 const at = (p: string) => fileURLToPath(new URL(`../${p}`, import.meta.url));
@@ -220,6 +221,12 @@ async function makeExamples(all?: Templates): Promise<Map<string, Example[]>> {
 export async function makeShort(skill: string, examples?: Map<string, Example[]>): Promise<string> {
   const ex = examples ?? (await makeExamples());
   const guide = makeLlms(skill);
+  const nested = section(guide, 'A document inside a document')
+    .trim()
+    .replace(/<(https:[^>]+#doc=[^>]+)>/g, (_match, url: string) => {
+      const doc = readPlain(new URL(url).hash, 'deck', (id) => !!appOf(id))!;
+      return '<' + SITE + 'deck/#/v1/deck/' + withBreaks(encodeDoc(doc.text)) + '>';
+    });
   const intro = /^# .*\n\n(.*?\. .*?\.)(?: |\n)/.exec(guide)![1];
   return [
     '# Tiny Little Office',
@@ -236,7 +243,7 @@ export async function makeShort(skill: string, examples?: Map<string, Example[]>
       .map((a) => `\`${a.id}\``)
       .join(
         ', ',
-      )}. \`&title=\` names it, \`&by=\` says who made it, and \`&lang=\` (\`es\`, \`zh-hant\`…) opens the page in one of the site's languages. The words may be in any language or script, right to left too: write for the reader. Emoji are words, put the character in; \`:name:\` is one of Lucide's icons in the line, and first in a slide's headline it is the slide's icon; \`code\` is set in monospace. Keep a link under 2,000 characters and to the shapes shown: a hand-written link is checked by nothing.`,
+      )}. \`&title=\` names it, \`&by=\` says who made it, and \`&lang=\` (\`es\`, \`zh-hant\`…) opens the page in one of the site's languages. Words can use any language; emoji, icons and inline code are supported. Keep links under 2,000 characters; validate drafts with try.`,
     '',
     `With a runtime: \`${API_LINE}\` in a browser, Deno or Bun; \`npx tinylittleoffice\` in Node, where \`skill --into ~/.claude/skills\` installs this guide for Claude Code. To learn a shape by example:`,
     '',
@@ -253,10 +260,12 @@ export async function makeShort(skill: string, examples?: Map<string, Example[]>
     ...apps().map((a) => {
       const all = ex.get(a.id)!;
       const e = all.find((x) => x.link.length <= 400) ?? [...all].sort((x, y) => x.link.length - y.link.length)[0];
-      return `- \`${a.id}\` ${a.name}, ${e.name}: <${e.link}>`;
+      // Packed examples keep the guide small as the registry grows.
+      const url = SITE + a.id + '/#/v1/' + a.id + '/' + withBreaks(encodeDoc(e.text));
+      return `- \`${a.id}\` ${a.name}, ${e.name}: <${url}>`;
     }),
     '',
-    section(guide, 'A document inside a document').trim(),
+    nested,
     '',
     section(guide, 'Three rules agents break first').trim(),
     '',

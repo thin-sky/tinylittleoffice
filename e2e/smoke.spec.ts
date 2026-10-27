@@ -48,7 +48,7 @@ test('home loads, the Word Processor opens, nothing throws, axe passes', async (
   await expect(page.locator('.to-title')).toHaveValue(/^New Document \d{4}-\d{2}-\d{2} #1$/);
   await page.locator('.to-title').fill('Hello');
   await page.locator('.to-title').press('Enter');
-  await expect(page).toHaveTitle('Hello · Tiny Little Office');
+  await expect(page).toHaveTitle('Hello · Thin Sky Office');
   expect(await overflow(page)).toBeLessThanOrEqual(0);
   await shot(page, 'write');
   expect((await axe(page)).violations).toEqual([]);

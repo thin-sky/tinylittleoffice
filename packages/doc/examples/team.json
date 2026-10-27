@@ -1,0 +1,24 @@
+{
+  "app": "team",
+  "name": "Team Paste",
+  "shapes": [
+    {
+      "id": "showdown",
+      "name": "a Showdown team export",
+      "for": "original Showdown text inside a showdown fence",
+      "from": "template rain",
+      "text": "```showdown\nPelipper @ Damp Rock\nAbility: Drizzle\nEVs: 248 HP / 252 Def / 8 SpD\nBold Nature\n- Hurricane\n- Surf\n- U-turn\n- Roost\n\nBarraskewda @ Choice Band\nAbility: Swift Swim\nEVs: 252 Atk / 4 SpD / 252 Spe\nAdamant Nature\n- Liquidation\n- Close Combat\n- Psychic Fangs\n- Flip Turn\n\nFerrothorn @ Leftovers\nAbility: Iron Barbs\nEVs: 252 HP / 4 Def / 252 SpD\nCareful Nature\n- Power Whip\n- Knock Off\n- Leech Seed\n- Stealth Rock\n```\n",
+      "link": "https://office.thin-sky.cloud/team/#doc=%60%60%60showdown%0APelipper+%40+Damp+Rock%0AAbility%3A+Drizzle%0AEVs%3A+248+HP+%2F+252+Def+%2F+8+SpD%0ABold+Nature%0A-+Hurricane%0A-+Surf%0A-+U-turn%0A-+Roost%0A%0ABarraskewda+%40+Choice+Band%0AAbility%3A+Swift+Swim%0AEVs%3A+252+Atk+%2F+4+SpD+%2F+252+Spe%0AAdamant+Nature%0A-+Liquidation%0A-+Close+Combat%0A-+Psychic+Fangs%0A-+Flip+Turn%0A%0AFerrothorn+%40+Leftovers%0AAbility%3A+Iron+Barbs%0AEVs%3A+252+HP+%2F+4+Def+%2F+252+SpD%0ACareful+Nature%0A-+Power+Whip%0A-+Knock+Off%0A-+Leech+Seed%0A-+Stealth+Rock%0A%60%60%60",
+      "json": {
+        "head": {},
+        "blocks": [
+          {
+            "k": "fence",
+            "lang": "showdown",
+            "body": "Pelipper @ Damp Rock\nAbility: Drizzle\nEVs: 248 HP / 252 Def / 8 SpD\nBold Nature\n- Hurricane\n- Surf\n- U-turn\n- Roost\n\nBarraskewda @ Choice Band\nAbility: Swift Swim\nEVs: 252 Atk / 4 SpD / 252 Spe\nAdamant Nature\n- Liquidation\n- Close Combat\n- Psychic Fangs\n- Flip Turn\n\nFerrothorn @ Leftovers\nAbility: Iron Barbs\nEVs: 252 HP / 4 Def / 252 SpD\nCareful Nature\n- Power Whip\n- Knock Off\n- Leech Seed\n- Stealth Rock"
+          }
+        ]
+      }
+    }
+  ]
+}

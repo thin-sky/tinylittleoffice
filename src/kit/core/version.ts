@@ -19,7 +19,7 @@ export interface Version {
 }
 
 /** The repository the source is published in, on the host kit/core/network.ts names. */
-export const REPO = 'aboard-io/tinylittleoffice';
+export const REPO = 'thin-sky/tinylittleoffice';
 
 /** The repository's own page: the home page's "GitHub". */
 export const repoUrl = () => `${origin('source')}/${REPO}`;

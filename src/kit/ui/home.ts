@@ -27,7 +27,7 @@
 import { LitElement, html, nothing } from 'lit';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { AppDef, Template } from '../core/app.ts';
-import { apps, siteRoot } from '../core/apps.ts';
+import { apps, appOf, siteRoot } from '../core/apps.ts';
 import { decodeDoc, encodeDoc, isSealed } from '../core/codec.ts';
 import { linesOf, search, type Seg } from '../share/search.ts';
 import { icon, UI } from '../draw/icons.ts';
@@ -287,6 +287,12 @@ export class ToHome extends LitElement {
     forget(k.id);
     this.redraw();
   }
+  private async openExample(id: string, template: string) {
+    const app = appOf(id);
+    if (!app) return;
+    const chosen = (await preloadTemplates(app)).find((t) => t.id === template);
+    if (chosen) go(templateHash(app, chosen));
+  }
   /** An app's kept documents, newest first: five, then "n more". Nothing kept, nothing shown. */
   private drive(app: AppDef, kept: Kept[]) {
     if (!kept.length) return nothing;
@@ -331,7 +337,18 @@ export class ToHome extends LitElement {
     const kept = library();
     const want = this.query.trim();
     return html`<div class="to-home">
-      <h1 class="sr-only">${t('common-tiny-little-office')}</h1>
+      <h1 class="sr-only">${t('sky-home-title')}</h1>
+      <section class="sky-home-intro">
+        <p>${t('sky-home-intro')}</p>
+        <div class="sky-actions">
+          <button class="to-btn" type="button" @click=${() => void this.openExample('worksheet', 'decision')}>${t('sky-decision')}</button>
+          <button class="to-btn" type="button" @click=${() => void this.openExample('study', 'toki-pona')}>${t('sky-toki')}</button>
+          <button class="to-btn" type="button" @click=${() => void this.openExample('worksheet', 'recipe')}>${t('sky-recipe')}</button>
+          <button class="to-btn" type="button" @click=${() => void this.openExample('worksheet', 'rpg')}>${t('sky-rpg')}</button>
+          <button class="to-btn" type="button" @click=${() => void this.openExample('team', 'rain')}>${t('sky-team')}</button>
+        </div>
+        <small>${t('sky-home-credit')}</small>
+      </section>
       ${
         keeping() && kept.length
           ? html`<input class="to-search" type="search" placeholder=${t('home-search-your-documents')} aria-label=${t('home-search-your-documents')} autocomplete="off" .value=${this.query} @input=${(e: Event) => (this.query = (e.target as HTMLInputElement).value)} @keydown=${(e: KeyboardEvent) => e.key === 'Enter' && (e.preventDefault(), this.querySelector<HTMLElement>('.to-found-docs a')?.click())} />`

@@ -1,5 +1,6 @@
 # Generated outputs are their scripts' (docs, the skill, llms.txt); Markdown and HTML are written as they are.
 node_modules/
+compression-study/
 dist/
 docs/
 skill/

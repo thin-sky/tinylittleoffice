@@ -195,6 +195,36 @@ A table `Place | Lat:number | Lon:number | Note`, in decimal degrees. `units: km
 
 {{templates:trip}} {{exports:trip}}
 
+## Thin Sky tools
+
+### worksheet: interactive worksheets
+
+One table: Field:name | Value | Unit | Hint. The first column names the Value cell for formulas.
+Values starting with = are calculated outputs; other values are editable. Unit is text, check, number, or a displayed unit such as g.
+Paragraphs provide instructions and task-list items are live checkboxes. Share an updated link to share the filled worksheet.
+
+{{tpl:worksheet:decision}}
+
+{{templates:worksheet}}
+
+### study: a study pack
+
+One table: Front | Back | Hint. A row is a card; ==word== inside a question is a cloze deletion.
+The document contains all answers. Practice progress stays in memory for the visit and is not shared.
+
+{{tpl:study:starter}}
+
+{{templates:study}}
+
+### team: a Showdown paste
+
+A fence with language showdown holds the original Pokémon Showdown export. Separate sets with a blank line.
+The editor displays cards and edits the export text; it does not validate battle-format legality.
+
+{{tpl:team:rain}}
+
+{{templates:team}}
+
 ## Every app's files
 
 Every document downloads as a `.pdf` (its pages as pictures; Print in the browser saves one with the words still words), a picture (`.png`), a web page (`.html`), Markdown (`.md`, footnotes in Markdown's reference form) and its own text (`.tlo`: the TLO with `app: <id>` in its head, which opens as its own app when dropped on the site). A `.zip` of `.tlo` and `.md` files, a folder per app, opens the same way when dropped: every document in it is kept on the device (with Save in browser off, listed to keep or to open). A link that downloads a file as it opens is `#/v1/<app>.<ext>/<payload>`, or `view=<ext>` in the plain form.

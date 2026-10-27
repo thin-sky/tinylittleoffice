@@ -39,6 +39,22 @@ const compose = (host: string, what: string): Reach => ({
 });
 
 export const NETWORK = {
+  tokiCourse: {
+    host: 'lipu-sona.pona.la',
+    what: 'The learning reference named in the Toki Pona study pack',
+    when: 'after a tap',
+    carries: 'Only the reference address, opened by the reader',
+    stops: 'Not opening the reference',
+    by: 'apps/study/templates.ts',
+  },
+  tokiHome: {
+    host: 'tokipona.org',
+    what: 'The official Toki Pona site named in the study pack',
+    when: 'after a tap',
+    carries: 'Only the reference address, opened by the reader',
+    stops: 'Not opening the reference',
+    by: 'apps/study/templates.ts',
+  },
   site: {
     host: 'tinylittleoffice.com',
     what: 'The site’s own files: the page, the app file (every app, the English words, the icons, the emoji and the math), its stylesheet, an app’s templates when its list opens, a language when a page is in it, and the type (IBM Plex, a face when a page’s words need it), each fetched once and kept a year',

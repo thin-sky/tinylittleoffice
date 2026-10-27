@@ -1,6 +1,6 @@
 # Diagram Maker (`diagram`), Tiny Little Office
 
-Mind maps, org charts, family trees, swimlanes, timelines, Venns, seating charts and networks, drawn from a few lines. A document is a link: https://tinylittleoffice.com/diagram/#doc=<percent-encoded TLO>
+Mind maps, org charts, family trees, swimlanes, timelines, Venns, seating charts and networks, drawn from a few lines. A document is a link: https://office.thin-sky.cloud/diagram/#doc=<percent-encoded TLO>
 
 `kind:` in the head says which, and each is a list:
 
@@ -41,6 +41,6 @@ kind: mind
   - Jobs
 ```
 
-As a link: <https://tinylittleoffice.com/diagram/#doc=---%0Akind%3A+mind%0A---%0A-+The+garden%0A++-+Jobs>
+As a link: <https://office.thin-sky.cloud/diagram/#doc=---%0Akind%3A+mind%0A---%0A-+The+garden%0A++-+Jobs>
 
-Every shape as a document, a link and JSON: https://tinylittleoffice.com/examples/diagram.json. The whole description: https://tinylittleoffice.com/llms-full.txt
+Every shape as a document, a link and JSON: https://office.thin-sky.cloud/examples/diagram.json. The whole description: https://office.thin-sky.cloud/llms-full.txt

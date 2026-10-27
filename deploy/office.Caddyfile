@@ -1,0 +1,9 @@
+office.thin-sky.cloud {
+    encode zstd gzip
+    handle_path /tinier/* {
+        reverse_proxy thin-sky-office:8001
+    }
+    handle {
+        reverse_proxy thin-sky-office:8000
+    }
+}

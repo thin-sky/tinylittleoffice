@@ -610,13 +610,13 @@ export class ToShell extends LitElement {
     const def = this.def;
     // A QR code the document holds of itself is drawn from its link as it now is.
     setSelfLink(def ? this.link : '');
-    document.title = def ? `${this.outerTitle} · ${t('common-tiny-little-office')}` : t('common-tiny-little-office');
+    document.title = def ? `${this.outerTitle} · ${t('sky-home-title')}` : t('sky-home-title');
   }
   /** What the document is called: the name it was given, a new one's name, or "Untitled presentation" (a link that came with none). */
   private get docTitle(): string {
     const def = this.def;
     if (def && this.sealed) return t('common-locked-document');
-    return def ? def.title(this.doc) || this.fresh || t('common-untitled-noun', { noun: def.noun }) : t('common-tiny-little-office');
+    return def ? def.title(this.doc) || this.fresh || t('common-untitled-noun', { noun: def.noun }) : t('sky-home-title');
   }
   /** What the world outside the page is told the document is called (the tab, history, the share sheet): nothing of a locked one. */
   private get outerTitle(): string {

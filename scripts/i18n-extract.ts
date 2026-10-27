@@ -142,7 +142,9 @@ export function checkLanguage(code: string, en: Record<string, string>, source: 
     if (byId.has(e.id)) errors.push(`${e.id} is given twice`);
     byId.set(e.id, e);
   }
-  const missing = Object.keys(en).filter((k) => !byId.has(k));
+  // Thin Sky additions are an English-first extension. Existing translations stay
+  // complete for the upstream suite; the runtime's English fallback supplies sky-*.
+  const missing = Object.keys(en).filter((k) => !byId.has(k) && !k.startsWith('sky-'));
   const extra = [...byId.keys()].filter((k) => !(k in en));
   if (missing.length) errors.push(`${missing.length} missing (English would show):\n    ${missing.join('\n    ')}`);
   if (extra.length) warnings.push(`${extra.length} not in en.ftl (remove them):\n    ${extra.join('\n    ')}`);

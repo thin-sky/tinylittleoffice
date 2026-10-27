@@ -33,8 +33,8 @@ test('outside a checkout there are no facts, and no error', () => {
 });
 
 test('a commit and the repository itself link to their pages in the published source', () => {
-  expect(commitUrl('abc')).toBe('https://github.com/aboard-io/tinylittleoffice/commit/abc');
-  expect(repoUrl()).toBe('https://github.com/aboard-io/tinylittleoffice');
+  expect(commitUrl('abc')).toBe('https://github.com/thin-sky/tinylittleoffice/commit/abc');
+  expect(repoUrl()).toBe('https://github.com/thin-sky/tinylittleoffice');
 });
 
 test('a release’s notes name the tag, the commit and every script hash, and how to check them', async () => {
@@ -42,7 +42,7 @@ test('a release’s notes name the tag, the commit and every script hash, and ho
   const notes = releaseNotes({ commit: 'b'.repeat(40), tag: 'v1.0.0', built: '2026-10-10T09:00:00Z', csp: { scripts: ['sha256-abc=', 'sha256-def='] } }, 'tinylittleoffice-v1.0.0.tar.gz');
   expect(notes).toContain(`Tiny Little Office v1.0.0: the site's files as built from commit ${'b'.repeat(40)}`);
   expect(notes).toContain('- `sha256-abc=`\n- `sha256-def=`');
-  expect(notes).toContain('gh attestation verify tinylittleoffice-v1.0.0.tar.gz -R aboard-io/tinylittleoffice');
+  expect(notes).toContain('gh attestation verify tinylittleoffice-v1.0.0.tar.gz -R thin-sky/tinylittleoffice');
   expect(notes).toContain('npm run verify-deploy -- https://tinylittleoffice.com/ v1.0.0');
   // The tag's own message first, when there is one: what the release carries and who it thanks.
   const told = releaseNotes(

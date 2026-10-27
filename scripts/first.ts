@@ -15,7 +15,7 @@ export interface Listed {
   templates: string[];
 }
 
-export const SITE_NAME = 'Tiny Little Office';
+export const SITE_NAME = 'Thin Sky Office';
 export const text = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /**
