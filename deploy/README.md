@@ -1,6 +1,6 @@
 # Thin Sky Office
 
-This fork adds worksheet, study, and team apps to the original Tiny Little Office suite. Documents use the existing TLO kernel, URL compression, sharing, exports and undo model. New controls currently use English; the original suite retains its translations.
+This fork adds worksheet, study, team, tier, and date-picker apps to the original Tiny Little Office suite. Documents use the existing TLO kernel, URL compression, sharing, exports and undo model. New controls currently use English; the original suite retains its translations.
 
 ## Examples
 
@@ -37,13 +37,13 @@ An untracked service environment file holds a generated BRAKE_KEY, the fixed sit
 
 Before changing homelab files, copy their previous versions with a timestamp. Validate complete Compose and Caddy configurations before applying only the new service and reloading Caddy.
 
-Rollback: restore previous Compose and Caddy files, stop office, and reload Caddy. Keep office_data so short links can be recovered. Code stays on dev/thin-sky-learning; no direct main push is needed.
+Upgrade rollback: restore docker-compose.yml.office-backup.20261027T045226Z to docker-compose.yml and run sudo docker compose up -d --no-deps office from /opt/homelab. This restores image thin-sky-office:5d0d9d3; Caddy is unchanged by the upgrade. Keep office_data so short links remain available. To remove the entire service, use the initial Compose and Caddy backups ending 20261027T041613Z, stop office and reload Caddy. Code stays on dev/thin-sky-learning.
 
 ## Deployed release
 
-The public service runs application commit 5d0d9d38c5b40ddc315fa3e496f134d5a9f260dc, image thin-sky-office:5d0d9d3. Its verified build is retained under /opt/homelab/office/releases/5d0d9d3. Config backups use the suffix .office-backup.20261027T041613Z. The persistent database is in homelab_office_data.
+The public service runs application commit c20c63a05d4005c505396b8c5bdf5d802ea46542, image thin-sky-office:c20c63a. Its verified build is retained under /opt/homelab/office/releases/c20c63a. The upgrade config backup uses the suffix .office-backup.20261027T045226Z. The persistent database is in homelab_office_data.
 
-Public HTTPS, all six desktop/mobile functional and accessibility checks, API link origins, decision and RPG formulas, actual Share short-link creation and decryption, and database persistence across container recreation were checked after deployment.
+Public HTTPS, all ten desktop/mobile functional and accessibility checks, API link origins, decision and RPG formulas, actual Share short-link creation and decryption, and database persistence across container recreation were checked after deployment.
 
 ## Organizer additions
 
@@ -52,3 +52,5 @@ Tier List Maker ranks text and emoji cards in named rows, with desktop drag and 
 The experiment stays in this fork; do not open upstream pull requests or create review PRs for routine experiments. The first draft PR in this fork was closed after the user clarified that preference.
 
 Document payloads currently choose raw UTF-8, DEFLATE, or DEFLATE with the frozen shared dictionary; Brotli is not enabled. HTTP compression is separately configured as zstd/gzip in Caddy. Old document URLs continue to open.
+
+The organizer upgrade passed the same ten checks on the live public site, the live API/iCalendar export check, and opening an encrypted short link created before the upgrade. The service is healthy.

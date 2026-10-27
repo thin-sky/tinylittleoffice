@@ -1,7 +1,7 @@
 # Merge into /opt/homelab/docker-compose.yml; do not run a separate Compose project.
 services:
   office:
-    image: thin-sky-office:5d0d9d3
+    image: thin-sky-office:c20c63a
     container_name: thin-sky-office
     restart: unless-stopped
     init: true
