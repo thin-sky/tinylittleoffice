@@ -1,0 +1,30 @@
+# Merge into /opt/homelab/docker-compose.yml; do not run a separate Compose project.
+services:
+  office:
+    image: thin-sky-office:5d0d9d3
+    container_name: thin-sky-office
+    restart: unless-stopped
+    init: true
+    ports:
+      - '127.0.0.1:8000:8000'
+      - '127.0.0.1:8001:8001'
+    env_file:
+      - ./office/office.env
+    volumes:
+      - office_data:/data
+    networks:
+      - homelab
+    healthcheck:
+      test: ['CMD', 'node', '-e', "Promise.all([8000,8001].map(p=>fetch('http://127.0.0.1:'+p+'/').then(r=>{if(!r.ok)throw Error(r.status)}))).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  office_data:
+    driver: local
+networks:
+  homelab:
+    name: homelab_homelab
+    external: true
